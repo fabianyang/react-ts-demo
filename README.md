@@ -13,6 +13,21 @@ yarn add react-router-dom  @types/react-router-dom
 yarn add react-transition-group  @types/react-transition-group
 ```
 
+## Typedoc
+
+https://segmentfault.com/a/1190000016760827
+https://segmentfault.com/a/1190000012795735
+
+## ChangeLog
+
+[demo](https://github.com/angular/angular/blob/master/CHANGELOG.md#toc365)
+
+[commitlint](https://conventional-changelog.github.io/commitlint)
+
+[conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
+
+## README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

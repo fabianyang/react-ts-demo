@@ -26,5 +26,11 @@
   "exclude": [
     "node_modules",
     "static"
-  ]
+  ],
+  "typedocOptions": {
+      "mode": "modules",
+      "hideGenerator": true,
+      "exclude": "**/*+(.spec|.e2e|.test).+(js|jsx|ts|tsx)",
+      "out": "docs"
+  }
 }

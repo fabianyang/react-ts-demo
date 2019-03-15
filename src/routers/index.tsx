@@ -1,3 +1,7 @@
+/**
+ * @module 路由
+ */
+
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Index from '../App';
