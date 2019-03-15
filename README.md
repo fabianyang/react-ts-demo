@@ -1,3 +1,18 @@
+## Command After `npm run eject`
+
+```
+yarn add antd babel-plugin-import node-sass less less-loader
+
+yarn add mobx mobx-react
+
+yarn add react-router @types/react-router
+yarn remove react-router @types/react-router
+
+yarn add react-router-dom  @types/react-router-dom
+
+yarn add react-transition-group  @types/react-transition-group
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
