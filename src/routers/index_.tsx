@@ -4,7 +4,7 @@
 
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Index from '../App';
+import Index from '../views/App';
 import { Button } from 'antd';
 import TimerView from '../TimeView';
 import AppState from '../TimeCounter';

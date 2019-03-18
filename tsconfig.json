@@ -6,6 +6,18 @@
       "dom.iterable",
       "esnext"
     ],
+    "rootDirs": ["./src"],
+    "baseUrl": "./src",
+    "paths": {
+        "@constants/*": ["constants/*"],
+        "@services/*": ["services/*"],
+        "@utils/*": ["utils/*"],
+        "@assets/*": ["assets/*"],
+        "@components/*": ["components/*"],
+        "@Pages/*": ["views/Pages/*"],
+        "@views/*": ["views/*"],
+        "@routers/*": ["routers/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,10 +30,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
+    "importHelpers": true,
     "experimentalDecorators": true
   },
   "include": [
-    "src"
+    "src", "typings"
   ],
   "exclude": [
     "node_modules",

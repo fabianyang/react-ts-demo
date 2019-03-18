@@ -56,6 +56,21 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
   .map(folder => path.resolve(appDirectory, folder))
   .join(path.delimiter);
 
+// yangfanyf.yang: add
+const env = {
+    "development": {
+        "BASEURL": "https://showcase.jackple.com/api/"
+    },
+    "qa": {
+        "BASEURL": "https://showcase.jackple.com/api/"
+    },
+    "production": {
+        "BASEURL": "https://showcase.jackple.com/api/"
+    }
+}
+
+
+
 // Grab NODE_ENV and REACT_APP_* environment variables and prepare them to be
 // injected into the application via DefinePlugin in Webpack configuration.
 const REACT_APP = /^REACT_APP_/i;
@@ -77,6 +92,8 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        // yangfanyf.yang: add
+        BASEURL: env[process.env.NODE_ENV]['BASEURL']
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

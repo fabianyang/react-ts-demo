@@ -1,7 +1,7 @@
 ## Command After `npm run eject`
 
 ```
-yarn add antd babel-plugin-import node-sass less less-loader
+yarn add antd babel-plugin-import node-sass less less-loader --dev
 
 yarn add mobx mobx-react
 
@@ -11,6 +11,15 @@ yarn remove react-router @types/react-router
 yarn add react-router-dom  @types/react-router-dom
 
 yarn add react-transition-group  @types/react-transition-group
+
+yarn add css-modules-typescript-loader tsconfig-paths-webpack-plugin --dev
+
+yarn add mobx-react-router react-loadable
+
+yarn add @types/react-loadable --dev
+
+yarn add axios
+
 ```
 
 ## Typedoc
@@ -25,6 +34,10 @@ https://segmentfault.com/a/1190000012795735
 [commitlint](https://conventional-changelog.github.io/commitlint)
 
 [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
+
+#typescript
+
+https://ts.xcatliu.com/
 
 ## README
 

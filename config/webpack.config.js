@@ -24,6 +24,9 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
+// yangfanyf.yang: add
+const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const theme = require('./theme');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -79,6 +82,13 @@ module.exports = function(webpackEnv) {
           shouldUseRelativeAssetPaths ? { publicPath: '../../' } : undefined
         ),
       },
+      // yangfanyf.yang: add
+      cssOptions.modules && {
+        loader: 'css-modules-typescript-loader',
+        // options: {
+        //   mode: process.env.CI ? 'verify' : 'emit'
+        // }
+      },
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
@@ -115,14 +125,14 @@ module.exports = function(webpackEnv) {
       }
       if (preProcessor === "less-loader") {
         Object.assign(loader.options, {
-          modifyVars: {
-            'primary-color': '#000000',
-            'link-color': '#1DA57A',
-            'border-radius-base': '2px',
-          },
+          modifyVars: theme,
           javascriptEnabled: true,
         })
       }
+      if (preProcessor === "sass-loader") {
+        loader.options.includePaths = [paths.appStyles]
+      }
+
       loaders.push(loader);
     }
     return loaders;
@@ -282,6 +292,11 @@ module.exports = function(webpackEnv) {
         'react-native': 'react-native-web',
       },
       plugins: [
+        // yangfanyf.yang: add
+        new TSConfigPathsPlugin({
+            configFile: paths.appTsWebpackConfig,
+            extensions: ['.ts', '.tsx', '.js', '.jsx']
+        }),
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
         // guards against forgotten dependencies and such.
         PnpWebpackPlugin,
@@ -290,7 +305,7 @@ module.exports = function(webpackEnv) {
         // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
         // please link the files into your node_modules/ and let module-resolution kick in.
         // Make sure your source files are compiled, as they will not be processed in any way.
-        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])
       ],
     },
     resolveLoader: {
@@ -360,6 +375,8 @@ module.exports = function(webpackEnv) {
                         },
                       },
                     },
+                    // yangfanyf.yang: add
+                    'react-hot-loader/babel'
                   ],
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
