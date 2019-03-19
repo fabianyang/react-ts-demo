@@ -8,8 +8,8 @@ import { COOKIE_KEYS } from '@constants/index'
 
 export interface IStoreProps {
     routerStore?: RouterStore
-    userInfo?: IAuthStore.UserInfo
-    initUserInfo?: () => IAuthStore.UserInfo
+    userInfo?: IModules.UserInfo
+    initUserInfo?: () => IModules.UserInfo
 }
 
 @inject(

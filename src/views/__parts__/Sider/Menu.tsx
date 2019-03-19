@@ -5,7 +5,7 @@ import { Menu, Icon } from 'antd'
 // import pathToRegexp from 'path-to-regexp'
 
 import * as styles from './index.module.scss'
-import menu, { IMenu, IMenuInTree } from './../menu'
+import menu, { IMenu, IMenuInTree } from '@models/menu'
 import { arrayToTree, queryArray } from '@utils/index'
 
 const { SubMenu } = Menu
@@ -15,7 +15,7 @@ interface IStoreProps {
     sideBarTheme?: IGlobalStore.SideBarTheme
     navOpenKeys?: string[]
     setOpenKeys?: (openKeys: string[]) => void
-    userInfo?: IAuthStore.UserInfo
+    userInfo?: IModules.UserInfo
     routerStore?: RouterStore
 }
 

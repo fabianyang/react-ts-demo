@@ -5,9 +5,9 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
 import * as styles from './index.module.scss'
 import Error from '@components/Error'
-import menu, { asynchronousComponents } from './menu'
-import Header from './Header'
-import Sider from './Sider'
+import menu, { asynchronousComponents } from '@models/menu'
+import Header from '@views/__parts__/Header'
+import Sider from '@views/__parts__/Sider'
 
 function Home() {
     return (

@@ -11,7 +11,7 @@ const FormItem = Form.Item
 
 interface IStoreProps {
     routerStore?: RouterStore
-    login?: (data: IAuthStore.LoginParams) => Promise<any>
+    login?: (data: IRequestParams.Login) => Promise<any>
 }
 
 @inject(

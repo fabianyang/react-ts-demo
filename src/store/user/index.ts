@@ -19,7 +19,7 @@ export class UserStore extends StoreExt {
      * @memberof UserStore
      */
     @observable
-    users: IUserStore.IUser[] = []
+    users: IModules.User[] = []
     /**
      * table pageIndex
      *
@@ -65,11 +65,11 @@ export class UserStore extends StoreExt {
         })
     }
 
-    createUser = async (user: IUserStore.IUser) => {
+    createUser = async (user: IModules.User) => {
         await this.api.user.createUser(user)
     }
 
-    modifyUser = async (user: IUserStore.IUser) => {
+    modifyUser = async (user: IModules.User) => {
         await this.api.user.modifyUser(user)
     }
 

@@ -9,7 +9,7 @@ import UserModal from './../UserModal'
 
 interface IStoreProps {
     getUsersloading?: boolean
-    users?: IUserStore.IUser[]
+    users?: IModules.User[]
     getUsers?: () => Promise<any>
     deleteUser?: (_id: string) => Promise<any>
     handleTableChange?: (pagination: PaginationConfig) => void
@@ -43,7 +43,7 @@ class UserTable extends ComponentExt<IProps> {
     private userModalVisible: boolean = false
 
     @observable
-    private currentUser: IUserStore.IUser = {
+    private currentUser: IModules.User = {
         account: ''
     }
 
@@ -53,7 +53,7 @@ class UserTable extends ComponentExt<IProps> {
     }
 
     @action
-    modifyUser = (user: IUserStore.IUser) => {
+    modifyUser = (user: IModules.User) => {
         this.currentUser = user
         this.userModalVisible = true
     }
@@ -78,7 +78,7 @@ class UserTable extends ComponentExt<IProps> {
         } = this.props
         return (
             <React.Fragment>
-                <Table<IUserStore.IUser>
+                <Table<IModules.User>
                     className="center-table"
                     style={{ width: '100%' }}
                     bordered
@@ -95,15 +95,15 @@ class UserTable extends ComponentExt<IProps> {
                     }}
                     onChange={handleTableChange}
                 >
-                    <Table.Column<IUserStore.IUser> key="account" title="Account" dataIndex="account" width={200} />
-                    <Table.Column<IUserStore.IUser> key="category" title="Category" dataIndex="category" width={100} />
-                    <Table.Column<IUserStore.IUser>
+                    <Table.Column<IModules.User> key="account" title="Account" dataIndex="account" width={200} />
+                    <Table.Column<IModules.User> key="category" title="Category" dataIndex="category" width={100} />
+                    <Table.Column<IModules.User>
                         key="createdAt"
                         title="CreatedAt"
                         dataIndex="createdAt"
                         width={200}
                     />
-                    <Table.Column<IUserStore.IUser>
+                    <Table.Column<IModules.User>
                         key="action"
                         title="Action"
                         width={120}

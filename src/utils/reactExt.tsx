@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { message, notification } from 'antd'
 
-import * as api from '@services/api'
+import * as api from '@controller/index'
 
 /**
  * 扩展组件/store类以方便调用

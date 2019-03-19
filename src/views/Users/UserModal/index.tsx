@@ -22,8 +22,8 @@ const formItemLayout = {
 const userCategory = ['user', 'admin']
 
 interface IStoreProps {
-    createUser?: (user: IUserStore.IUser) => Promise<any>
-    modifyUser?: (user: IUserStore.IUser) => Promise<any>
+    createUser?: (user: IModules.User) => Promise<any>
+    modifyUser?: (user: IModules.User) => Promise<any>
     getUsers?: () => Promise<any>
     changePageIndex?: (pageIndex: number) => void
 }
@@ -31,7 +31,7 @@ interface IStoreProps {
 interface IProps extends IStoreProps {
     visible: boolean
     onCancel: () => void
-    user?: IUserStore.IUser
+    user?: IModules.User
 }
 
 @inject(

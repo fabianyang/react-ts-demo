@@ -13,14 +13,14 @@ export class AuthStore extends StoreExt {
      * @memberof AuthStore
      */
     @observable
-    userInfo: IAuthStore.UserInfo = {
+    userInfo: IModules.UserInfo = {
         msg: '',
         token: '',
         category: '',
     }
 
     @action
-    login = async (params: IAuthStore.LoginParams): Promise<any> => {
+    login = async (params: IRequestParams.Login): Promise<any> => {
         try {
             const res = await this.api.auth.login(params)
             runInAction('SET_USERINFO', () => {
@@ -47,12 +47,12 @@ export class AuthStore extends StoreExt {
      * @memberof AuthStore
      */
     @action
-    initUserInfo = (): IAuthStore.UserInfo => {
+    initUserInfo = (): IModules.UserInfo => {
         const lcoalUserInfo = localStorage.getItem(LOCALSTORAGE_KEYS.USERINFO)
         if (!lcoalUserInfo) {
             throw new Error('no local userinfo!!')
         }
-        const userInfo: IAuthStore.UserInfo = JSON.parse(lcoalUserInfo)
+        const userInfo: IModules.UserInfo = JSON.parse(lcoalUserInfo)
         this.userInfo = userInfo
         return userInfo
     }

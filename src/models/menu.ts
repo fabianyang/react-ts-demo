@@ -13,12 +13,12 @@ const loadComponent = (loader: () => Promise<any>) =>
 export const asynchronousComponents: {
     [index: string]: (ComponentClass<{}, any> & LoadableComponent) | (FunctionComponent<{}> & LoadableComponent)
 } = {
-    Dashboard: loadComponent(() => import(/* webpackChunkName: "dashboard" */ '@Pages/Dashboard')),
-    ChartAreaStack: loadComponent(() => import(/* webpackChunkName: "chart-area-stack" */ '@Pages/AreaStack')),
+    Dashboard: loadComponent(() => import(/* webpackChunkName: "dashboard" */ '@views/Dashboard')),
+    ChartAreaStack: loadComponent(() => import(/* webpackChunkName: "chart-area-stack" */ '@views/AreaStack')),
     ChartLineSmooth: loadComponent(() =>
-        import(/* webpackChunkName: "chart-line-smooth" */ '@Pages/LineSmooth')
+        import(/* webpackChunkName: "chart-line-smooth" */ '@views/LineSmooth')
     ),
-    ChartPie: loadComponent(() => import(/* webpackChunkName: "chart-pie" */ '@Pages/Pie')),
+    ChartPie: loadComponent(() => import(/* webpackChunkName: "chart-pie" */ '@views/Pie')),
     Users: loadComponent(() => import(/* webpackChunkName: "users" */ '@views/Users'))
 }
 

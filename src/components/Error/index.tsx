@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import * as styles from './index.module.scss'
-console.log(process.env);
+
 const Error = () => (
     <div className={styles.centered}>
         <div className={styles.emoji}>😭</div>

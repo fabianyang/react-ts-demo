@@ -10,11 +10,12 @@
     "baseUrl": "./src",
     "paths": {
         "@constants/*": ["constants/*"],
+        "@controller/*": ["controller/*"],
+        "@models/*": ["models/*"],
         "@services/*": ["services/*"],
         "@utils/*": ["utils/*"],
         "@assets/*": ["assets/*"],
         "@components/*": ["components/*"],
-        "@Pages/*": ["views/Pages/*"],
         "@views/*": ["views/*"],
         "@routers/*": ["routers/*"]
     },
