@@ -1,3 +1,7 @@
+## Introduction
+
+Code refactoring for [ts-react-webpack](https://github.com/YDJ-FE/ts-react-webpack)
+
 ## Command After `npm run eject`
 
 ```
